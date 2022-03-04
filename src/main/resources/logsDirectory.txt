@@ -1,0 +1,1 @@
+This is a placeholder file to ensure the /logs directory is part of the zip file created in the build.

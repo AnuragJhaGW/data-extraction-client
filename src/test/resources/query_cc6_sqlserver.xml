@@ -1,0 +1,126 @@
+<queryDefinitions>
+  <query name="financials" incremental="true">
+    <countSQL><![CDATA[use &DB_NAME;
+     SELECT COUNT(trn.id) from cc_transaction trn
+     &SINCE_SQL( WHERE trn.updatetime > ?)]]>    </countSQL>
+    <sql>
+      <![CDATA[use &DB_NAME;
+      SELECT
+      trnlife.typecode,
+      lossad.postalcode AS losspostalcode,
+      lossstate.name AS lossstate,
+      losscountry.name AS losscountry,
+      recoverycategory.name AS recoverycategory,
+      ctype.typecode costtype,
+      trn.id transactionid,
+      trn.exposureid exposureid,
+      trn.claimid claimid,
+      convert(varchar(23), trn.createtime, 120) trncreatetime,
+      trtype.NAME transactiontype,
+      costcat.NAME costcategory,
+      clm.catastropheid,
+      litstat.NAME litigationstatus,
+      lcause.NAME losscause,
+      lob.NAME lob,
+      clm.fault,
+      flt.NAME faultrating,
+      covtype.NAME primcoverage,
+      csubtype.NAME coveragesubtype,
+      seg.typecode segmenttypecode,
+      convert(varchar(23), clm.lossdate, 120) clmlossdate,
+      convert(varchar(23), clm.createtime, 120) clmcreatetime,
+      convert(varchar(23), clm.closedate, 120) clmclosedate,
+      convert(varchar(23), expo.createtime, 120) expocreatetime,
+      convert(varchar(23), expo.closedate, 120) expoclosedate,
+      uwgt.name AS UnderwritingGroup,
+      uwgt.description UnderwritingGroupDesc,
+      a.Claimamount
+
+      FROM
+      cc_transaction trn
+      LEFT JOIN
+      cctl_transaction trtype ON trn.subtype = trtype.id
+      LEFT JOIN
+      cctl_transactionstatus trnstat ON trn.status = trnstat.id
+      LEFT JOIN
+      cctl_transactionlifecyclestate trnlife ON trn.lifecyclestate = trnlife.id
+      LEFT JOIN
+      cctl_costtype ctype ON trn.costtype = ctype.id
+      LEFT JOIN
+      cctl_costcategory costcat ON trn.costcategory = costcat.id
+      LEFT JOIN
+      cc_claim clm ON trn.claimid = clm.id
+      LEFT JOIN
+      cc_policy policy ON clm.policyid = policy.id
+      LEFT JOIN
+      cctl_underwritinggrouptype uwgt ON policy.underwritinggroup = uwgt.id
+      LEFT JOIN
+      cctl_lobcode lob ON clm.lobcode = lob.id
+      LEFT JOIN
+      cctl_losscause lcause ON clm.losscause = lcause.id
+      LEFT JOIN
+      cctl_litigationstatus litstat ON clm.litigationstatus = litstat.id
+      LEFT JOIN
+      cc_catastrophe cat ON clm.catastropheid = cat.id
+      LEFT JOIN
+      cctl_faultrating flt ON clm.faultrating = flt.id
+      LEFT JOIN
+      cc_exposure expo ON trn.exposureid = expo.id
+      LEFT JOIN
+      cctl_coveragetype covtype ON expo.primarycoverage = covtype.id
+      LEFT JOIN
+      cctl_coveragesubtype csubtype ON expo.coveragesubtype = csubtype.id
+      LEFT JOIN
+      cctl_claimsegment seg ON expo.segment = seg.id
+      LEFT JOIN
+      cctl_recoverycategory recoverycategory ON trn.recoverycategory = recoverycategory.id
+      LEFT JOIN
+      cc_address lossad ON clm.LossLocationID = lossad.ID
+      LEFT JOIN
+      cctl_state lossstate ON lossad.state = lossstate.id
+      LEFT JOIN
+      cctl_country losscountry ON lossad.country = losscountry.id
+      LEFT JOIN
+      (SELECT
+      transactionid,
+      SUM(claimamount) AS claimamount
+      FROM
+      cc_transactionlineitem
+      GROUP BY
+      transactionid
+      ) a ON trn.id = a.transactionid
+      &SINCE_SQL( WHERE trn.updatetime > ?)
+      ]]>
+    </sql>
+    <column name="typecode" type="STRING"/>
+    <column name="losspostalcode" type="STRING"/>
+    <column name="lossstate" type="STRING"/>
+    <column name="losscountry" type="STRING"/>
+    <column name="recoverycategory" type="STRING"/>
+    <column name="costtype" type="STRING"/>
+    <column name="transactionid" type="INTEGER"/>
+    <column name="exposureid" type="INTEGER"/>
+    <column name="claimid" type="INTEGER"/>
+    <column name="trncreatetime" type="DATETIME"/>
+    <column name="transactiontype" type="STRING"/>
+    <column name="costcategory" type="STRING"/>
+    <column name="catastropheid" type="INTEGER"/>
+    <column name="litigationstatus" type="STRING"/>
+    <column name="losscause" type="STRING"/>
+    <column name="lob" type="STRING"/>
+    <column name="fault" type="DECIMAL"/>
+    <column name="faultrating" type="STRING"/>
+    <column name="primcoverage" type="STRING"/>
+    <column name="coveragesubtype" type="STRING"/>
+    <column name="segmenttypecode" type="STRING"/>
+    <column name="clmlossdate" type="DATETIME"/>
+    <column name="clmcreatetime" type="DATETIME"/>
+    <column name="clmclosedate" type="DATETIME"/>
+    <column name="expocreatetime" type="DATETIME"/>
+    <column name="expoclosedate" type="DATETIME"/>
+    <column name="UnderwritingGroup" type="STRING"/>
+    <column name="UnderwritingGroupDesc" type="STRING"/>
+    <column name="Claimamount" type="DECIMAL"/>
+  </query>
+</queryDefinitions>
+

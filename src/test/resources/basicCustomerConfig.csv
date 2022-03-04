@@ -1,0 +1,8 @@
+number,code,name,db,version,db details,version details, ftp user, ftp password
+1,t1,Test Customer 1,oracle,cc5,user1,password1,Oracle 10.2.4,5.0.8
+2,t2,Test Customer 2,oracle,cc6,user2,password2,Oracle 11.1.2,6.0.8
+3,t3,Test CC4 SQLSERVER,sqlserver,cc4,sa,Gw_123,SQL Server 2005,4.0.8
+4,t4,Test CC5 SQLSERVER,sqlserver,cc5,sa,Gw_123,SQL Server 2005,5.0.8
+5,t5,Test CC6 SQLSERVER,sqlserver,cc6,sa,Gw_123,SQL Server 2005,5.0.8
+6,t6,Test CC5 ORACLE,oracle,cc5,sa,Gw_123,SQL Server 2005,5.0.8
+7,t7,Test CC6 ORACLE,oracle,cc6,sa,Gw_123,SQL Server 2005,5.0.8

@@ -1,0 +1,20 @@
+
+<queryDefinitions>
+
+  <query name="user" version="2.1" days_per_chunk="10" catchup="true">
+    <countSQL><![CDATA[ SELECT COUNT(usr.id) from cc_user usr]]>    </countSQL>
+    <sql>
+      <![CDATA[
+        select publicID,
+         integerExt,
+         convert(varchar(23), updateTime, 120) as updateTime,
+         convert(varchar(23), CreateTime, 120) as createTime
+        from cc_user]]>
+    </sql>
+    <column name="publicID" type="STRING"/>
+    <column name="integerExt" type="INTEGER"/>
+    <column name="updateTime" type="DATETIME"/>
+    <column name="createTime" type="DATETIME"/>
+  </query>
+
+</queryDefinitions>

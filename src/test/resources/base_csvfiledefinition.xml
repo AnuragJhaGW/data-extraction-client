@@ -1,0 +1,28 @@
+
+<csvFileDefinitions>
+
+  <csvfiledef datatablename="policy" version="1.0"  >
+    <csvcolumn name="id" type="INTEGER" alias="policyid" columnstatus="not_required" />
+      <csvcolumn name="policynumber" type="STRING" alias="policynumber" columnstatus="required" />
+      <csvcolumn name="locationId" type="INTEGER" alias="policylocationid" columnstatus="required" />
+      <csvcolumn name="policyEffectiveDate" type="DATETIME" alias="policyeffectivestartdate" columnstatus="required" />
+      <csvcolumn name="policyExpirationDate" type="DATETIME" alias="policyeffectiveenddate" columnstatus="required" />
+      <csvcolumn name="addressLine1" type="STRING" alias="policyaddressline1" columnstatus="required" />
+      <csvcolumn name="addressLine2" type="STRING" alias="policyaddressline2" columnstatus="not_required" />
+      <csvcolumn name="city" type="STRING" alias="policycity" columnstatus="required"  />
+      <csvcolumn name="postalCode" type="STRING" alias="policypostalcode" columnstatus="required" />
+      <csvcolumn name="state" type="STRING" alias="policystate" columnstatus="not_required" />
+      <csvcolumn name="county" type="STRING" alias="policycounty" columnstatus="not_required" />
+      <csvcolumn name="country" type="STRING" alias="policycountry" columnstatus="required" />
+      <csvcolumn name="latitude" type="DECIMAL" alias="policylatitude" columnstatus="not_required" />
+      <csvcolumn name="longitude" type="DECIMAL" alias="policylongitude" columnstatus="not_required" />
+      <csvcolumn name="LOB" type="STRING" alias="policylineofbusiness" columnstatus="required" />
+      <csvcolumn name="createTime" type="DATETIME" alias="createdate/time" columnstatus="not_required" />
+      <csvcolumn name="updateTime" type="DATETIME" alias="updatedate/time" columnstatus="not_required" />
+      <csvcolumn name="total_insured_value" type="DECIMAL" alias="policytotalinsuredvalue" columnstatus="not_required" />
+      <csvcolumn name="annual_premium" type="DECIMAL" alias="policyannualpremium" columnstatus="not_required"/>
+      <csvcolumn name="policyInceptionDate" type="DATE" alias="policyinceptiondatetime" columnstatus="not_required"  />
+  </csvfiledef>
+
+</csvFileDefinitions>
+

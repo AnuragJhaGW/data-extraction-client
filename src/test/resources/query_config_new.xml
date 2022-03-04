@@ -1,0 +1,24 @@
+
+<queryDefinitions>
+
+    <query name="lakeOnly_default" version="2.1" days_per_chunk="10" catchup="true">
+        <sql><![CDATA[ select * from cc_user ]]></sql>
+    </query>
+
+    <query name="lakeOnly_true" version="2.1" days_per_chunk="10" catchup="true" lakeOnly="true">
+        <sql><![CDATA[ select * from cc_user ]]></sql>
+    </query>
+
+    <query name="lakeOnly_false" version="2.1" days_per_chunk="10" catchup="true" lakeOnly="false">
+        <sql><![CDATA[ select * from cc_user ]]></sql>
+    </query>
+
+    <query name="exclude_cc4" version="2.1" days_per_chunk="10" catchup="true"  exclude="CC4">
+        <sql><![CDATA[ select * from cc_user ]]></sql>
+    </query>
+
+    <query name="exclude_several" version="2.1" days_per_chunk="10" catchup="true"  exclude=" CC4 , 5, cc8, cc10">
+        <sql><![CDATA[ select * from cc_user ]]></sql>
+    </query>
+
+</queryDefinitions>

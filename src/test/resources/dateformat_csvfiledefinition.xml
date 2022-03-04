@@ -1,0 +1,11 @@
+
+<csvFileDefinitions>
+
+  <csvfiledef datatablename="policy" version="1.0"  >
+      <csvcolumn name="policyEffectiveDate" type="DATETIME" alias="policyeffectivestartdate" columnstatus="required" dateformat="yyyyMMdd" />
+      <csvcolumn name="latitude" type="DECIMAL" alias="policylatitude" columnstatus="omitted" />
+      <csvcolumn name="longitude" type="DECIMAL" alias="policylongitude" columnstatus="omitted" />
+  </csvfiledef>
+
+</csvFileDefinitions>
+

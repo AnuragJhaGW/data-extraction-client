@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<!-- config-override.xml -->
+<!-- Elements in this file will override the elements in the default config.xml file. -->
+<config>
+  <database url="jdbc:sqlserver://devdb2\SQLSERVER2008R2:2009" db="edge_benchmark_cc6" user="sa" password="Gw_123" db_tag="DatabaseTag."/>
+  <guidewire url="http://URL" userName="TestCustomer" />
+  <ccinfo version="cc6"/>
+  <query_config_file dir="src/test/java/com/guidewire/tools/benchmarking" name="query_config.xml"/>
+  <working_directory dir="working"/>
+  <logs dir="working"/>
+</config>

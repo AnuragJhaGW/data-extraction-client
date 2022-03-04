@@ -1,0 +1,6 @@
+PolicyNumber,LocationID,Policy Effective Start Date,Policy Effective End Date,Address Line 1,AddressLine2,Policy City,Policy Postal Code,Policy State,Policy Country,Latitude,Longitude,LOB,Create Date/Time,Update Date/Time
+P124100,100005,2007-02-15,2008-02-15,44 Hawley Street,,Binghamton,13901,NY,US,,,Homeowners,,
+P124200,100006",2007-02-20,2008-02-20,295 Main Street,,Buffalo,14203,NY,US,,,Homeowners,,
+P128100,100007,2007-02-22,2008-02-22",170 Pearl Street,,Buffalo,14202,NY,US,,,Homeowners,,
+P128200,100009,2007-02-27,2008-02-27,101 Garfield Avenue,,Endicott,13760,NY,US,,,Homeowners,,
+P140100,100010,2007-02-27,2008-02-27,1093 Clark Street,,Endicott,13760,NY,US,,,Homeowners,,

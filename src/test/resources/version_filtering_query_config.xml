@@ -1,0 +1,33 @@
+
+<queryDefinitions>
+
+  <query name="user" version="2.1" days_per_chunk="10">
+    <countSQL><![CDATA[ SELECT COUNT(usr.id) from cc_user usr]]>    </countSQL>
+    <sql>
+      <![CDATA[
+        select publicID,
+         integerExt,
+         convert(varchar(23), updateTime, 120) as updateTime,
+         convert(varchar(23), CreateTime, 120) as createTime
+        from cc_user]]>
+    </sql>
+    <column name="publicID" type="STRING"/>
+    <column name="integerExt" type="INTEGER"/>
+    <column name="updateTime" type="DATETIME"/>
+    <column name="createTime" type="DATETIME"/>
+  </query>
+
+  <query name="user" version="2.1" days_per_chunk="10" exclude="CC4">
+    <countSQL><![CDATA[ SELECT COUNT(peril.id) from cc_catastropheperil peril]]></countSQL>
+    <sql>
+      <![CDATA[
+        select id,
+        catastrophe,
+        displayname]]>
+    </sql>
+    <column name="id" type="STRING"/>
+    <column name="catastrophe" type="INTEGER"/>
+    <column name="displayname" type="STRING"/>
+  </query>
+
+</queryDefinitions>

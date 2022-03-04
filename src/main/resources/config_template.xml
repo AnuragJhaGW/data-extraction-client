@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<!-- config-override.xml -->
+<!-- Elements in this file will override the elements in the default config.xml file. -->
+<config>
+  <database url="DB_URL" db="" user="USERID" password="DB" oracle_schema=""/>
+  <guidewire oktaHost="GUIDEWIRE_OKTA_HOST" oktaClientId="GUIDEWIRE_OKTA_CLIENTID" oktaClientSecret="GUIDEWIRE_OKTA_CLIENTSECRET"/>
+</config>

@@ -1,0 +1,83 @@
+<queryDefinitions>
+  <query name="transaction" version="1.0" days_per_chunk="30" incremental="true">
+    <countSQL><![CDATA[&USEDB_SQL
+      SELECT COUNT(trn.id)
+      FROM
+        &DB_TAGcc_transaction trn
+        &TRANSACTION_JOINS
+      WHERE
+        trn.id > 0
+        &TRANSACTION_WHERES
+        &SINCE_SQL(AND trn.updateTime > ?)]]></countSQL>
+    <sql>
+      <![CDATA[
+      &USEDB_SQL
+      &SELECT
+        &ID(trn.id, ID),
+        &ID(trn.exposureID, exposureID),
+        &ID(trn.claimID, claimID),
+        &ID(trn.checkID, checkID),
+        &ID(trn.claimcontactID, claimcontactID),
+        &DATETIME(trn.createTime, createTime),
+        &DATETIME(trn.updateTime, updateTime),
+        &DECIMAL(tli.claimamount, claimAmount),
+        &BIT(trn.doesnoterodereserves, doesNotErodeReserves),
+        &TYPECODE(trn.paymenttype, paymenttypeTYPECODE),
+        &TYPECODEID(trn.paymenttype, paymentTypeID),
+        &CC567(&DECIMAL(tli.transactionamount, transactionAmount),)
+        &CC567(&DECIMAL(tli.reportingamount, reportingAmount),)
+        &TYPECODE(trnlife.TYPECODE, trnlifeTYPECODE),
+        &TYPECODEID(trnlife.ID, trnlifeID),
+        &TYPECODE(recoverycategory.TYPECODE, recoverycategoryTYPECODE),
+        &TYPECODEID(recoverycategory.ID, recoverycategoryID),
+        &TYPECODE(costtype.TYPECODE, costtypeTYPECODE),
+        &TYPECODEID(costtype.ID, costtypeID),
+        &TYPECODE(transactionType.TYPECODE, transactionTypeTYPECODE),
+        &TYPECODEID(transactionType.ID, transactionTypeID),
+        &TYPECODE(transactionStatus.TYPECODE, transactionStatusTYPECODE),
+        &TYPECODEID(transactionStatus.ID, transactionStatusID),
+        &CC567(&TYPECODE(trncurrency.TYPECODE, trncurrencyTYPECODE),)
+        &CC567(&TYPECODEID(trncurrency.ID, trncurrencyID),)
+        &TYPECODE(costcategory.TYPECODE, costcategoryTYPECODE),
+        &TYPECODEID(costcategory.ID, costcategoryID) &TRANSACTION_SELECTS,
+        &BIT(trn.retired, retired)
+      &FROM
+        &DB_TAGcc_transaction trn
+      LEFT JOIN
+        (Select
+            transactionID,
+            &CC4(SUM(amount)                                     claimamount)
+            &CC567(SUM(claimamount)                                     claimamount,)
+            &CC567(SUM(ReportingAmount)                                 reportingamount,)
+            &CC567(SUM(TransactionAmount)                               transactionamount)
+        FROM
+            &DB_TAGcc_transactionlineitem
+        GROUP BY
+            transactionID
+        ) tli    ON  trn.ID = tli.transactionID
+      LEFT JOIN
+        &DB_TAGcctl_transaction transactionType                   ON  trn.subtype = transactionType.ID
+      LEFT JOIN
+        &DB_TAGcctl_transactionstatus transactionStatus            ON  trn.status = transactionStatus.ID
+      LEFT JOIN
+        &DB_TAGcctl_transactionlifecyclestate trnlife    ON  trn.lifecyclestate = trnlife.ID
+      LEFT JOIN
+        &DB_TAGcctl_costtype costtype                       ON  trn.costtype = costtype.ID
+      LEFT JOIN
+        &DB_TAGcctl_costcategory costcategory                 ON  trn.costcategory = costcategory.ID
+      LEFT JOIN
+        &DB_TAGcctl_recoverycategory recoverycategory    ON  trn.recoverycategory = recoverycategory.ID
+      &CC567(LEFT JOIN  &DB_TAGcctl_currency trncurrency    ON  trn.currency = trncurrency.ID)
+      &TRANSACTION_JOINS
+      WHERE
+        trn.id > 0
+        &TRANSACTION_WHERES
+        &CHUNK_SQL_NULL(AND trn.createTime = NULL)
+        &CHUNK_SQL_START(AND trn.createTime > ?)
+        &CHUNK_SQL_END(AND trn.createTime <= ?)
+        &SINCE_SQL(AND trn.updateTime > ?)
+      order by trn.&SORT_BY_COLUMN
+]]> </sql>
+    </query>
+
+</queryDefinitions>

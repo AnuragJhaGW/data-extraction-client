@@ -1,0 +1,5 @@
+PolicyNumber,LocationID,Policy Effective Start Date,Policy Effective End Date,Address Line 1,AddressLine2,Policy City,Policy Postal Code,Policy State,Policy Country,Latitude,Longitude,LOB,Create Date/Time,Update Date/Time
+Required,Required,Required,Required,Required,Optional,Required,Required,Required,Required,Optional,Optional,Optional,Optional,Optional
+User-readable policy number.  May be alpha-numeric.,"May be alpha-numeric, as long as unique to a policy location and meaningful to the client.
+(If customer has no location info for a policy, they can put “1” in the field.",YYYY-MM-DD,YYYY-MM-DD,,,,,,,#.########,#.########,Line of business,YYYY-MM-DD HH24:MI:SS ,YYYY-MM-DD HH24:MI:SS
+FL245502333,123,2013-08-08,2014-08-08,300 A Philip Randolph Boulevard,,JACKSONVILLE,32202,FL,US,,,Actual Policies,,

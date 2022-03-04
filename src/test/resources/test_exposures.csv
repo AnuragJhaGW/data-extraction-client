@@ -1,0 +1,74 @@
+Expected Rows: 25,,,,,,,,,,,,,,,
+<data start>,,,,,,,,,,,,,,,
+ID,claimID,coverageID,publicID,createTime,updateTime,closeDate,reOpenDate,otherCoverage,loss,covTypeTYPECODE,csubTypeTYPECODE,segTYPECODE,expTypeTYPECODE,reopenedreasonTYPECODE,retired
+ID,ID,ID,STRING,DATETIME,DATETIME,DATE,DATETIME,BIT,DECIMAL,TYPECODE,TYPECODE,TYPECODE,TYPECODE,TYPECODE,BIT
+1,1,,demo_sample:10001,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,0,1.5,COLL,coll_vd,auto_low,VehicleDamage,,0
+2,1,,demo_sample:10002,20120106 10:14:15.000-0800,,20120117,,1,2.25,APD,apd_vd,auto_mid,VehicleDamage,,0
+3,3,,demo_sample:10003,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,,,0,3.375,COLL,coll_vd,auto_low,VehicleDamage,,0
+4,3,,demo_sample:10004,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120120,,0,5.0625,APD,apd_vd,auto_mid,VehicleDamage,,0
+5,2,,demo_sample:70001,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120111,,0,7.59375,APD,apd_vd,auto_low,VehicleDamage,,0
+6,12,,demo_sample:80001,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120125,,0,11.390625,COLL,coll_vd,auto_low,VehicleDamage,,0
+7,12,,demo_sample:80002,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120127,,1,20,APD,apd_vd,auto_mid,VehicleDamage,,0
+8,13,,demo_sample:80003,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120129,,0,30,COLL,coll_vd,auto_low,VehicleDamage,,0
+9,13,,demo_sample:80004,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,0,45,APD,apd_vd,auto_mid,VehicleDamage,,0
+10,14,,demo_sample:80005,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,0,67.5,COLL,coll_vd,auto_low,VehicleDamage,,0
+11,15,,demo_sample:80072,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,0,101.25,COLL,coll_vd,auto_low,VehicleDamage,,0
+12,16,,trucking:106,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,0,151.875,APD,apd_vd,auto_low,VehicleDamage,,0
+13,17,,trucking:108,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,0,,COLL,coll_vd,auto_low,VehicleDamage,,0
+14,4,,demo_sample:501,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,0,,LIABMP,liabmp_mp,injury_low,MedPay,,0
+15,1,,demo_sample:20001,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,0,1000,MPAY,mpay_mp,injury_low,MedPay,,0
+16,1,,demo_sample:20002,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,1,1500,ABI,abi_bid,injury_mid,BodilyInjuryDamage,,0
+17,3,,demo_sample:20003,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,0,2250,ABI,abi_bid,injury_mid,BodilyInjuryDamage,,0
+18,12,,demo_sample:20010,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,0,3375,MPAY,mpay_mp,injury_low,MedPay,,0
+19,12,,demo_sample:20011,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,1,5062.5,ABI,abi_bid,injury_mid,BodilyInjuryDamage,,0
+20,13,,demo_sample:20012,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,0,7593.75,ABI,abi_bid,injury_mid,BodilyInjuryDamage,,0
+21,6,,demo_sample:510,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,0,11390.625,LIABMP,liabmp_mp,injury_low,MedPay,,0
+22,6,,demo_sample:502,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,0,17085.9375,GL,,injury_low,GeneralDamage,,0
+23,12,,demo_sample:20020,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,0,25628.90625,MPAY,,injury_low,GeneralDamage,,0
+24,12,,demo_sample:20021,20120106 10:14:28.573-0800,20120106 10:14:34.373-0800,20120115,,1,38443.35938,ABI,,injury_mid,GeneralDamage,,0
+25,9,,demo_sample:30001,20120106 10:14:28.573-0800,20120106 10:14:28.573-0800,20120115,,0,57665.03906,WM,wm_wcid,wc_med_only,WCInjuryDamage,,0
+<data end>,,,,,,,,,,,,,,,
+Stats:,,,,,,,,,,,,,,,
+Date of Run,Chunks,Total Query Time,Max Query Time,Processing Time,DB Name,Customer Code,,,,,,,,,
+6/18/2012 15:46,34,0,0,1,edge_benchmark_cc5,tCust1,,,,,,,,,
+Query: exposures version: 1.0,,,,,,,,,,,,,,,
+use edge_benchmark_cc5;,,,,,,,,,,,,,,,
+      SELECT,,,,,,,,,,,,,,,
+    exposure.id ID,,,,,,,,,,,,,,,
+    exposure.claimid claimID,,,,,,,,,,,,,,,
+    exposure.coverageid coverageID,,,,,,,,,,,,,,,
+    exposure.publicid publicID,,,,,,,,,,,,,,,
+    exposure.createTime createTime,,,,,,,,,,,,,,,
+    exposure.updateTime updateTime,,,,,,,,,,,,,,,
+    exposure.closedate closeDate,,,,,,,,,,,,,,,
+    exposure.reopendate reOpenDate,,,,,,,,,,,,,,,
+    exposure.OtherCoverage otherCoverage,,,,,,,,,,,,,,,
+    lossparty.TYPECODE lossPartyTYPECODE,,,,,,,,,,,,,,,
+    covtype.TYPECODE covTypeTYPECODE,,,,,,,,,,,,,,,
+    csubtype.TYPECODE csubTypeTYPECODE,,,,,,,,,,,,,,,
+    seg.TYPECODE segTYPECODE,,,,,,,,,,,,,,,
+    exptype.TYPECODE expTypeTYPECODE,,,,,,,,,,,,,,,
+    reopenedreason.TYPECODE reopenedreasonTYPECODE ,,,,,,,,,,,,,,,
+    exposure.retired retired,,,,,,,,,,,,,,,
+FROM,,,,,,,,,,,,,,,
+    cc_exposure exposure,,,,,,,,,,,,,,,
+    LEFT JOIN,,,,,,,,,,,,,,,
+        cctl_losspartytype lossparty              ON  exposure.LossParty = lossparty.id,,,,,,,,,,,,,,,
+    LEFT JOIN,,,,,,,,,,,,,,,
+        cctl_coveragetype covtype                 ON  exposure.primarycoverage = covtype.id,,,,,,,,,,,,,,,
+    LEFT JOIN,,,,,,,,,,,,,,,
+        cctl_coveragesubtype csubtype             ON  exposure.coveragesubtype = csubtype.id,,,,,,,,,,,,,,,
+    LEFT JOIN,,,,,,,,,,,,,,,
+        cctl_claimsegment seg                     ON  exposure.segment = seg.id,,,,,,,,,,,,,,,
+    LEFT JOIN,,,,,,,,,,,,,,,
+        cctl_exposuretype exptype                 ON  exposure.exposuretype = exptype.id,,,,,,,,,,,,,,,
+"	LEFT JOIN",,,,,,,,,,,,,,,
+        cctl_exposurereopenedreason reopenedreason   ON  exposure.ReopenedReason = reopenedreason.id,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+WHERE,,,,,,,,,,,,,,,
+  &CHUNK_SQL_NULL(exposure.createTime = NULL),,,,,,,,,,,,,,,
+  &CHUNK_SQL_START(exposure.createTime > ?),,,,,,,,,,,,,,,
+  &CHUNK_SQL_AND,,,,,,,,,,,,,,,
+  &CHUNK_SQL_END(exposure.createTime <= ?),,,,,,,,,,,,,,,
+  &SINCE_SQL(exposure.updateTime > ?),,,,,,,,,,,,,,,
+  order by exposure.&SORT_BY_COLUMN,,,,,,,,,,,,,,,

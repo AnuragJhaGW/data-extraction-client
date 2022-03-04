@@ -1,0 +1,72 @@
+LABEL----------------------> testDefaultAttributes
+<?xml version="1.0"?>
+<config>
+  <database  />
+  <guidewire />
+</config>
+
+
+LABEL----------------------> testAttributes
+<?xml version="1.0"?>
+<config>
+  <database url="test_rbcbxh"
+            db="test_vtkikb"
+            user="test_yawpwf"
+            password="test_maercn"
+            db_tag="test_plikdo." />  <!-- note the "." -->
+
+  <guidewire url="test_mofuoc"
+             userName="test_ezruuk"
+             password="test_bawqmr"
+             gwauth="test_jkdusa"
+             casHost="test_hlrwve"
+             domain="test_gliofp"/>
+</config>
+
+
+LABEL----------------------> testNoDotInDbTag
+<?xml version="1.0"?>
+<config>
+  <database db_tag="test_mqhnkg" />  <!-- note there's no "." -->
+</config>
+
+
+LABEL----------------------> testUserNamePasswordAuth
+<?xml version="1.0"?>
+<config>
+  <guidewire userName="wallpaperupload"
+             password="1ivqiNjAcwpjDfV"
+             casHost="gw-loginservice-qa.dev-live.guidewire.net" />
+</config>
+
+
+LABEL----------------------> testGwAuthAttribute
+<?xml version="1.0"?>
+<config>
+  <guidewire gwauth="test_hlrwve" />
+</config>
+
+
+
+LABEL----------------------> testBadElementDetected
+<?xml version="1.0"?>
+<config>
+  <test_bad_element />
+  <guidewire gwauth="test_hlrwve" />
+</config>
+
+
+LABEL----------------------> testBadAttributesDetected
+<?xml version="1.0"?>
+<config>
+  <guidewire test_bad_attribute1="test_mofuoc"
+             test_bad_attribute2="test_ezruuk"/>
+</config>
+
+
+LABEL----------------------> testCaseInsensitive
+<?xml version="1.0"?>
+<config>
+  <DatABase uSeR="test_yawpwf" />
+</config>
+

@@ -1,0 +1,11 @@
+PolicyNumber,LocationID,Policy Effective Start Date,Policy Effective End Date,Address Line 1,AddressLine2,Policy City,Policy Postal Code,Policy State,Policy Country,Latitude,Longitude,LOB,Create Date/Time,Update Date/Time
+P110600,100000,2007-01-31,2008-01-31,1001 E. Hillsdale, Blvd.,Suite 800,Foster City,94404,CA,US,,,Homeowners,,
+P116100,100001,2007-02-05,2008-02-05,5275 Edina Industrial Boulevard,,Edina,55439,MN,US,,,Homeowners,,
+P110800,100002,Not a date,2008-02-05,707 Eagleview Boulevard,,Exton,19341,CA,US,,,Homeowners,,
+P116700,100003,2007-02-06,2008-02-06,5600 Explorer Drive,,Mississauga,L4W 4Y2,ON,CA,,,Homeowners,,
+P120100,100004,2007-02-09,2008-02-09,99 Washington Ave,,Albany,12231,NY,US,xxxxxx,abcdef,Homeowners,,
+P124100,100005,2007-02-15,2008-02-15,44 Hawley Street,,Binghamton,13901,NY,US,,,Homeowners,,
+P128100,100007,2007-02-22,2008-02-22,170 Pearl Street,,Buffalo,14202,NY,US,,,Homeowners,,
+P130300,100008,2007-02-23,1 Lafayette Square,,Buffalo,14203,NY,US,,,Homeowners,,
+P128200,100009,2007-02-27,2008-02-27,101 Garfield Avenue,,Endicott,13760,NY,US,,,Homeowners,,
+P140100,100010,2007-02-27,2008-02-27,1093 Clark Street,,Endicott,13760,NY,US,,,Homeowners,,
